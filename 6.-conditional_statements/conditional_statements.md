@@ -36,19 +36,13 @@ if temperature > 290.0:
     print("The sample is warm.")
 ```
 
-Run the file:
-
-```bash
-python conditional_statements.py
-```
-
-You should see:
+Run the file, after which you should see:
 
 ```text
 The sample is warm.
 ```
 
-The line `temperature > 290.0` is a condition. Python checks whether the
+The line `temperature > 290.0` is a *condition*. Python checks whether the
 condition is `True` or `False`.
 
 If the condition is `True`, Python runs the indented code below the `if`
@@ -273,17 +267,19 @@ check the spacing carefully.
 
 ## Practice
 
-Try these in `conditional_statements.py`.
+Try these in a new blank `conditional_statements.py`.
 
-1. Create a variable named `mass`.
-2. If `mass` is greater than `0`, print `"Mass is positive"`.
-3. Otherwise, print `"Mass must be greater than zero"`.
-4. Create a variable named `temperature`.
-5. Print one message if the temperature is below freezing, another if it is near
-   room temperature, and another if it is very hot.
-6. Create variables named `x`, `xmin`, and `xmax`.
-7. Use `and` to check whether `x` is between `xmin` and `xmax`.
-8. Print a message that says whether `x` is inside the range.
+1. Create a variable named `TIME` and assign it the value `0`.
+2. Create a variable named `SPEED_A` and assign it the value `5.0`.
+3. Create a variable named `SPEED_B` and assign it the value `-2.0`.
+4. Create a variable named `POSITION_A`, using the formula given by `POSITION_A = TIME * SPEED_A`.
+5. Create a variable named `POSITION_B` using the formula given by `POSITION_B = TIME * SPEED_B`.
+6. Print a message that shows the distance between both positions.
+7. Print a message that says "Particles are far apart" when the distance between the positions is larger than `10 m`.
+8. Print a message that says "Particles are close together" when the distance between the positions is smaller than `10 m` but larger than `2 m`.
+9. Print a message that says "Particles are very close together" when the distance between the positions is smaller than `2 m`.
+10. Run the script.
+11. Change the values of `TIME` and see how it affects the output.
 
 ## Challenge
 
@@ -308,5 +304,5 @@ Your program should print:
 - `"below ground"` if `y < 0`
 
 Because decimal arithmetic is not always exact, it is usually better to check
-whether a value is close to zero instead of exactly equal to zero. We will learn
-more about this later.
+whether a value is close to zero instead of exactly equal to zero.
+We will learn more about this later.

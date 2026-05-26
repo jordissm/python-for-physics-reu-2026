@@ -17,19 +17,7 @@ You will learn how to:
 ## Create a New Python File
 
 1. Create a new file named `plotting.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Make sure the required libraries are installed:
-
-   ```bash
-   python3 -m pip install -r requirements.txt
-   ```
-
-4. Run the file from the terminal with:
-
-   ```bash
-   python3 plotting.py
-   ```
+2. Run the file.
 
 At first, nothing will happen because the file is empty.
 
@@ -54,19 +42,15 @@ times = [0.0, 1.0, 2.0, 3.0, 4.0]
 positions = [0.0, 1.2, 4.8, 10.8, 19.2]
 
 plt.plot(times, positions)
-plt.show()
+plt.xlabel("time (s)")
+plt.ylabel("position (m)")
+plt.savefig("position_vs_time.png")
+
+print("Saved plot to position_vs_time.png")
 ```
 
-Run the file:
-
-```bash
-python3 plotting.py
-```
-
-A plot window should open.
-
-If the plot window does not appear, make sure you are running the file from VS
-Code or a normal terminal that can open graphics windows.
+Run the file. The plot should save in the directory where the
+script is ran.
 
 ## Add Markers
 
@@ -78,8 +62,12 @@ import matplotlib.pyplot as plt
 times = [0.0, 1.0, 2.0, 3.0, 4.0]
 positions = [0.0, 1.2, 4.8, 10.8, 19.2]
 
-plt.plot(times, positions, "o-")
-plt.show()
+plt.plot(times, positions)
+plt.xlabel("time (s)")
+plt.ylabel("position (m)")
+plt.savefig("position_vs_time.png")
+
+print("Saved plot to position_vs_time.png")
 ```
 
 The `"o-"` means "draw circles at the data points and connect them with a

@@ -15,13 +15,7 @@ and `max`. Now you will define your own.
 ## Create a New Python File
 
 1. Create a new file named `functions.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
-
-   ```bash
-   python3 functions.py
-   ```
+2. Run the file.
 
 At first, nothing will happen because the file is empty.
 
@@ -36,13 +30,7 @@ def say_hello():
 say_hello()
 ```
 
-Run the file:
-
-```bash
-python3 functions.py
-```
-
-You should see:
+Run the file. You should see:
 
 ```text
 Hello from a function.
@@ -232,8 +220,8 @@ Try these in `functions.py`.
 1. Write a function named `force` that takes `mass` and `acceleration`.
 2. The function should return `mass * acceleration`.
 3. Call the function with at least two different sets of values.
-4. Write a function named `celsius_to_kelvin`.
-5. The function should return `celsius + 273.15`.
+4. Write a function named `celsius_to_fahrenheit`.
+5. The function should return `celsius * 9 / 5 + 32`.
 6. Write a function named `average_speed`.
 7. The function should take `start_position`, `end_position`, `start_time`, and
    `end_time`.

@@ -14,13 +14,7 @@ The two main loop tools in Python are `for` loops and `while` loops.
 ## Create a New Python File
 
 1. Create a new file named `loops.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
-
-   ```bash
-   python3 loops.py
-   ```
+2. Run the file.
 
 At first, nothing will happen because the file is empty.
 
@@ -35,19 +29,7 @@ for temperature in temperatures:
     print(temperature)
 ```
 
-Run the file:
-
-```bash
-python3 loops.py
-```
-
-You should see each temperature printed on its own line.
-
-The loop reads naturally:
-
-```text
-for each temperature in temperatures, print the temperature
-```
+Run the file. You should see each temperature printed on its own line.
 
 ## Indentation Matters
 

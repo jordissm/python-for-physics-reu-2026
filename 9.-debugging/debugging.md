@@ -12,13 +12,7 @@ time.
 ## Create a New Python File
 
 1. Create a new file named `debugging.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
-
-   ```bash
-   python3 debugging.py
-   ```
+2. Run the file from the terminal with:
 
 At first, nothing will happen because the file is empty.
 
@@ -35,13 +29,8 @@ kinetic_energy = 0.5 * mas * speed**2
 print(kinetic_energy)
 ```
 
-Run the file:
-
-```bash
-python3 debugging.py
-```
-
-Python should show an error. The most useful line is usually near the bottom:
+Run the file. Python should show an error.
+The most useful line is usually near the bottom:
 
 ```text
 NameError: name 'mas' is not defined

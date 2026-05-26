@@ -16,13 +16,7 @@ Python can write output files such as plain text files and CSV files.
 ## Create a New Python File
 
 1. Create a new file named `output.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
-
-   ```bash
-   python3 output.py
-   ```
+2. Run the file.
 
 At first, nothing will happen because the file is empty.
 
@@ -37,14 +31,8 @@ with open("results.txt", "w") as file:
     file.write(message)
 ```
 
-Run the file:
-
-```bash
-python3 output.py
-```
-
-You should see a new file named `results.txt` in the same folder as `output.py`.
-Open it in VS Code. It should contain:
+Run the file. You should see a new file named `results.txt`
+in the same folder as `output.py`. Open it in VS Code. It should contain:
 
 ```text
 Python wrote this file.
@@ -216,39 +204,6 @@ with open("log.txt", "a") as file:
 Run this several times and open `log.txt`. Each run adds another line.
 
 Use append mode when you want to keep old output.
-
-## Using pandas to Write a CSV File
-
-pandas can write a DataFrame to a CSV file.
-
-```python
-import pandas as pd
-
-spring_constant = 20.0
-displacements = [-0.2, -0.1, 0.0, 0.1, 0.2]
-forces = []
-energies = []
-
-for x in displacements:
-    force = -spring_constant * x
-    energy = 0.5 * spring_constant * x**2
-
-    forces.append(force)
-    energies.append(energy)
-
-data = {
-    "displacement_m": displacements,
-    "force_N": forces,
-    "energy_J": energies,
-}
-
-df = pd.DataFrame(data)
-df.to_csv("spring_results_pandas.csv", index=False)
-```
-
-The `index=False` part tells pandas not to write an extra index column.
-
-Open `spring_results_pandas.csv` and compare it with the file you wrote by hand.
 
 ## Common Beginner Mistakes
 
