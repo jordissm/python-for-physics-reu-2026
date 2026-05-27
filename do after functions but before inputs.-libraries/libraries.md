@@ -2,9 +2,8 @@
 
 In this section, you will learn how to import Python libraries.
 
-A library is a collection of code that other people have already written. In
-scientific Python, libraries let us do numerical calculations, make plots, fit
-data, and work with tables without writing everything from scratch.
+A library is a collection of code that other people have already written by other people in which they have defined variables, functions, classes that you can use. Python libraries let us do numerical calculations, make plots, fit
+data, and work with tables without writing everything from scratch. There is a library for everything, some libraries can help you collect data from searching through many web pages, some libraries can help you edit pdfs or even video/audio files.
 
 In this bootcamp, we will use:
 
@@ -15,16 +14,16 @@ In this bootcamp, we will use:
 
 ## Before You Start
 
-Make sure your virtual environment is active. Your terminal prompt should
-include `(reu2026_env)`.
-
-Install the required libraries from the project folder:
+Install the required libraries by typing the following into your terminal (bottom part of vs code)
 
 ```bash
-python3 -m pip install -r requirements.txt
+pip install numpy
+pip install scipy
+pip install Matplotlib
+pip install pandas
 ```
 
-If you are not sure whether the libraries installed, run:
+If you are not sure whether the libraries installed, run the following on the terminal in VS code:
 
 ```bash
 python3 -m pip list
@@ -35,11 +34,7 @@ You should see `numpy`, `scipy`, `matplotlib`, and `pandas` in the list.
 ## Create a New Python File
 
 1. Create a new file named `libraries.py`.
-2. Run the file from the terminal with:
-
-   ```bash
-   python3 libraries.py
-   ```
+2. Run the file
 
 At first, nothing will happen because the file is empty.
 
@@ -58,10 +53,6 @@ print("Libraries imported successfully.")
 
 Run the file:
 
-```bash
-python3 libraries.py
-```
-
 You should see:
 
 ```text
@@ -70,7 +61,7 @@ Libraries imported successfully.
 
 The word `import` tells Python to load a library.
 
-The phrase `as np` gives NumPy a shorter nickname. These nicknames are common:
+The phrase `as np` gives NumPy a shorter nickname. These nicknames are common (but you can use any, such as 'import numpy as math_library'):
 
 - `numpy as np`
 - `matplotlib.pyplot as plt`
