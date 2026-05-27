@@ -15,19 +15,7 @@ The main tools are `if`, `elif`, and `else`.
 ## Create a New Python File
 
 1. Create a new file named `conditional_statements.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
-
-   ```bash
-   python conditional_statements.py
-   ```
-
-At first, nothing will happen because the file is empty.
-
-## A First `if` Statement
-
-Add this code to `conditional_statements.py`:
+2. Add this code to `conditional_statements.py`:
 
 ```python
 temperature = 295.0
@@ -38,7 +26,7 @@ if temperature > 290.0:
 
 Run the file, after which you should see:
 
-```text
+```terminal
 The sample is warm.
 ```
 

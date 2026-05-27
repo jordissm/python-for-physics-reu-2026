@@ -15,13 +15,7 @@ and `max`. Now you will define your own.
 ## Create a New Python File
 
 1. Create a new file named `functions.py`.
-2. Run the file.
-
-At first, nothing will happen because the file is empty.
-
-## A First Function
-
-Add this code to `functions.py`:
+2. Add this code to `functions.py`:
 
 ```python
 def say_hello():
