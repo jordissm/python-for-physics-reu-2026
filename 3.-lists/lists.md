@@ -16,19 +16,7 @@ many values together.
 ## Create a New Python File
 
 1. Create a new file named `lists.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
-
-   ```bash
-   python lists.py
-   ```
-
-At first, nothing will happen because the file is empty.
-
-## Your First List
-
-Add this code to `lists.py`:
+2. Add this code to `lists.py`:
 
 ```python
 temperatures = [290.0, 292.5, 295.0, 291.5]
@@ -44,7 +32,7 @@ python lists.py
 
 You should see:
 
-```text
+```terminal
 [290.0, 292.5, 295.0, 291.5]
 ```
 
@@ -131,7 +119,7 @@ print(len(temperatures))
 
 The output should be:
 
-```text
+```terminal
 4
 ```
 
@@ -154,7 +142,7 @@ print(measurements)
 
 The output should be:
 
-```text
+```terminal
 [1.2, 1.5, 1.4]
 ```
 

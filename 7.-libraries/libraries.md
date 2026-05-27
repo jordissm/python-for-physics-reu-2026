@@ -34,13 +34,7 @@ You should see `numpy`, `scipy`, `matplotlib`, and `pandas` in the list.
 ## Create a New Python File
 
 1. Create a new file named `libraries.py`.
-2. Run the file
-
-At first, nothing will happen because the file is empty.
-
-## Importing Libraries
-
-Add this code to `libraries.py`:
+2. Add this code to `libraries.py`:
 
 ```python
 import numpy as np
@@ -61,7 +55,7 @@ Libraries imported successfully.
 
 The word `import` tells Python to load a library.
 
-The phrase `as np` gives NumPy a shorter nickname. These nicknames are common (but you can use any, such as 'import numpy as math_library'):
+The phrase `as np` gives NumPy a shorter nickname. These nicknames are common (but you can use any, such as `import numpy as math_library`):
 
 - `numpy as np`
 - `matplotlib.pyplot as plt`
@@ -131,8 +125,8 @@ using a linear fit.
 import numpy as np
 from scipy.optimize import curve_fit
 
-def line(x, slope, intercept):
-    return slope * x + intercept
+def line(x, slope_input, intercept_input):
+    return slope_input * x + intercept_input
 
 times = np.array([0.0, 1.0, 2.0, 3.0])
 positions = np.array([0.1, 2.1, 4.0, 6.2])
@@ -161,17 +155,15 @@ import matplotlib.pyplot as plt
 times = np.array([0.0, 1.0, 2.0, 3.0])
 positions = np.array([0.1, 2.1, 4.0, 6.2])
 
-plt.plot(times, positions, "o")
+plt.plot(times, positions)
 plt.xlabel("time (s)")
 plt.ylabel("position (m)")
-plt.title("Position vs. Time")
-plt.show()
+plt.savefig("position_vs_time.png")
+
+print("Saved plot to position_vs_time.png")
 ```
 
-When you run this code, a plot window should open.
-
-If the plot window does not appear, check that you are running the file from VS
-Code or a normal terminal, not from a place that cannot open graphics windows.
+When you run this code, a plot will be saved in your system.
 
 ## pandas DataFrames
 
@@ -205,13 +197,6 @@ ModuleNotFoundError: No module named 'numpy'
 ```
 
 the library is probably not installed in your active virtual environment.
-
-Activate the environment and install the requirements again:
-
-```bash
-source reu2026_env/bin/activate
-python3 -m pip install -r requirements.txt
-```
 
 ### Misspelling the library name
 
