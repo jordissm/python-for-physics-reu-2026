@@ -15,13 +15,8 @@ The main tools are `if`, `elif`, and `else`.
 ## Create a New Python File
 
 1. Create a new file named `conditional_statements.py`.
-2. Make sure your virtual environment is active. Your terminal prompt should
-   include `(reu2026_env)`.
-3. Run the file from the terminal with:
 
-   ```bash
-   python conditional_statements.py
-   ```
+3. Run the file.
 
 At first, nothing will happen because the file is empty.
 
@@ -42,11 +37,36 @@ Run the file, after which you should see:
 The sample is warm.
 ```
 
-The line `temperature > 290.0` is a *condition*. Python checks whether the
-condition is `True` or `False`.
+The line `temperature > 290.0` is a *condition*. Python first evaluates the condition to be either true or false. If the condition is `True`, Python runs the indented code below the `if`
+statement. Try the following code:
 
-If the condition is `True`, Python runs the indented code below the `if`
-statement.
+```python
+temperature = 295.0
+
+print(temperature > 290.0)
+print(temperature < 290.0)
+print(temperature == 290.0)
+```
+
+You should get the following result:
+
+```text
+True
+False
+False
+```
+Python reads >,< and == as an instruction to evaluate the relative sizes of the LHS and the RHS, and evaluates it as either 'True' or 'False'. just as the '+' sign takes in two inputs and evaluates their sum. Why are there two '=' signs? It is because python understands one '=' sign to already mean, set the temperature variable to the value 290.0, which will overwrite the earlier value of 290.0. You can try running it with one '=' sign to understand the behaviour.So python is executing the code one step at a time. Step one, replace the code 'temperature > 290.0' by its evaluation: 'True'. so step 2 is to evaluate the remaining code after replacement:
+
+```python
+if True:
+    print("we are executing code in the if statement")
+```
+In the case we are asking whether 'temperature < 290.0', it replaces that block of text by False and runs the remaining code. This is a good model as to how python interprets the code.
+
+```python
+if False:
+    print("we are executing code in the if statement")
+```
 
 ## Indentation Matters
 
@@ -76,7 +96,15 @@ print("This line always prints.")
 ```
 
 The final `print` line is not indented, so it runs whether the condition is
-`True` or `False`.
+`True` or `False`. You can try running the following to verify that the second line always prints: 
+
+```python
+temperature = 295.0
+
+if temperature > 290.0:
+    print("The sample is warm.")
+print("This line always prints.")
+```
 
 ## `else`
 
@@ -147,20 +175,6 @@ Here is what the comparison operators mean:
 - `>=` means greater than or equal to
 - `<=` means less than or equal to
 
-Be careful with `=` and `==`.
-
-```python
-mass = 2.0
-```
-
-This stores the value `2.0` in the variable `mass`.
-
-```python
-mass == 2.0
-```
-
-This asks whether `mass` is equal to `2.0`.
-
 ## Combining Conditions
 
 You can combine conditions with `and` and `or`.
@@ -173,7 +187,31 @@ if temperature > 290.0 and pressure < 2.0:
     print("The experiment is in the target range.")
 ```
 
-With `and`, both conditions must be `True`.
+The way the `and` operator works is that both conditions must be `True`, for the overall expresssion to be evaluated as true. It works in the following way:
+
+
+True and True evaluates to True
+True and False evaluates to False
+False and True evaluates to False
+False and False evaluates to False
+
+Question: how do you think the following evaluate:
+
+
+True and True and False:
+True and False and False:
+
+
+How python interprets this condition: 
+
+Python first sees: 'temperature > 290.0 and pressure < 2.0', and then evaluates 'temperature > 290.0' to True and 'pressure < 2.0' to True individually, then it has to run:
+
+```python
+if True and True:
+```
+
+for which it evaluates 'True and True' to just 'True' and evaluates the remaining code.
+
 
 ```python
 temperature = 250.0
@@ -183,54 +221,40 @@ if temperature < 260.0 or pressure > 4.0:
     print("Warning: check the experiment.")
 ```
 
-With `or`, at least one condition must be `True`.
+With `or`, only one condition needs to be `True` for the expression to be 'True'.
 
-## A Physics Example: Has the Object Hit the Ground?
+True and True evaluates to True
+True and False evaluates to True
+False and True evaluates to True
+False and False evaluates to False
 
-Suppose an object moves vertically. We can use a conditional statement to check
-whether its height is above or below the ground.
-
-```python
-y0 = 10.0
-v0 = 2.0
-g = 9.8
-t = 2.0
-
-y = y0 + v0 * t - 0.5 * g * t**2
-
-print("height =", y, "meters")
-
-if y > 0:
-    print("The object is still above the ground.")
-else:
-    print("The object has reached or passed the ground.")
-```
-
-Run the file. Then change `t` to a few different values and run it again.
-
-## A Physics Example: Classifying Speed
-
-This example classifies the speed of an object.
+## A Physics Example: Pulling a block in the presence of friction
+Suppose you want to figure out the acceleration of a block of mass m being pulled with a string by a force F. The friction depends on whether the object is in static friction (it is not moving and a is 0) or whether it is in kinetic friction (it is moving and a is not 0). 
 
 ```python
-speed = 12.0
+F = 3.0
+f_coeff_static = 0.4
+f_coeff_kinetic = 0.3
+mass = 2.0
+g = 9.81
 
-if speed == 0:
-    print("The object is at rest.")
-elif speed < 5:
-    print("The object is moving slowly.")
-elif speed < 20:
-    print("The object is moving at a moderate speed.")
+Normal_force = mass*g
+max_static_friction = Normal_force*f_coeff_static
+
+if F > max_static_friction:
+    f = f_coeff_kinetic*Normal_force
+    a = (F - f)/mass
 else:
-    print("The object is moving quickly.")
+    f = F
+    a=0
+
+print("the acceleration is", a)
+print("the friction on the block is", f)
 ```
+Try out what happens when you pick any force greater than 7.848 Newtons (at this force, the block just starts to overcome static friction and move).
+What is the smallest non-zero acceleration you can find? (we are not looking for a right answer, just play around with it for a couple of minutes)
 
-Try changing `speed` to:
-
-- `0`
-- `2`
-- `12`
-- `30`
+Does your answer shed any light on why whenever you are dragging furniture it goes from still to a discontinous movement?
 
 ## Common Beginner Mistakes
 
@@ -265,26 +289,9 @@ if speed > 10:
 VS Code can help with indentation. If something looks shifted left or right,
 check the spacing carefully.
 
-## Practice
-
-Try these in a new blank `conditional_statements.py`.
-
-1. Create a variable named `TIME` and assign it the value `0`.
-2. Create a variable named `SPEED_A` and assign it the value `5.0`.
-3. Create a variable named `SPEED_B` and assign it the value `-2.0`.
-4. Create a variable named `POSITION_A`, using the formula given by `POSITION_A = TIME * SPEED_A`.
-5. Create a variable named `POSITION_B` using the formula given by `POSITION_B = TIME * SPEED_B`.
-6. Print a message that shows the distance between both positions.
-7. Print a message that says "Particles are far apart" when the distance between the positions is larger than `10 m`.
-8. Print a message that says "Particles are close together" when the distance between the positions is smaller than `10 m` but larger than `2 m`.
-9. Print a message that says "Particles are very close together" when the distance between the positions is smaller than `2 m`.
-10. Run the script.
-11. Change the values of `TIME` and see how it affects the output.
-
 ## Challenge
 
-Write a small program that checks whether a projectile is above the ground,
-exactly at the ground, or below the ground.
+Write a program that finds the height of a vertically thrown projectile at a given time. Note that after it touches the ground, it does not bounce but sticks on the ground.
 
 Use this starting point:
 
@@ -293,16 +300,7 @@ y0 = 5.0
 v0 = 8.0
 g = 9.8
 t = 1.0
-
-y = y0 + v0 * t - 0.5 * g * t**2
 ```
+and remember the equation:
+y = y0 + v0 * t - 0.5 * g * t**2
 
-Your program should print:
-
-- `"above ground"` if `y > 0`
-- `"at ground level"` if `y == 0`
-- `"below ground"` if `y < 0`
-
-Because decimal arithmetic is not always exact, it is usually better to check
-whether a value is close to zero instead of exactly equal to zero.
-We will learn more about this later.
