@@ -157,6 +157,25 @@ print(speed)
 
 It looks for the variable `time` and, since it has not been defined to Python yet, it throws an error.  
 
+## reading the '=' sign
+
+It is important to think that whenever you write something like 'a=b' you aren't really saying that from now a and b are the same. But you are taking the 'value' from b and 'assigning' it to a. It is an action. For example consider the following code, predict what will be the final value of a and then run the code:
+
+```python
+a = 1
+b = 2 
+print("value of a", a)
+print("value of b", b)
+a = b #this stores the value of b into the variable a.
+b = 4 #this reassigns the value 4 into b.
+
+print(a)
+```
+Even though we changed the value of b. This does not mean the value of a will change. It is not like in math that we have said the variables a and b are always going to be the same. a is just storing the value of b that was there at the time we did the assignment.
+
+Treat the '=' sign as an action of assigning value at one point in time, not a long term relationship between two variables like in math!
+
+
 ## Check condition
 
 You can use `>` and `<` signs to check if a value is greater (less) than another. For example,
