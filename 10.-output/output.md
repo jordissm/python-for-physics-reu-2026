@@ -16,13 +16,7 @@ Python can write output files such as plain text files and CSV files.
 ## Create a New Python File
 
 1. Create a new file named `output.py`.
-2. Run the file.
-
-At first, nothing will happen because the file is empty.
-
-## Writing a Simple Text File
-
-Add this code to `output.py`:
+2. Add this code to `output.py`:
 
 ```python
 message = "Python wrote this file.\n"

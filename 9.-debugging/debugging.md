@@ -12,13 +12,7 @@ time.
 ## Create a New Python File
 
 1. Create a new file named `debugging.py`.
-2. Run the file from the terminal with:
-
-At first, nothing will happen because the file is empty.
-
-## Read Error Messages From the Bottom Up
-
-Add this code to `debugging.py`:
+2. Add this code to `debugging.py`:
 
 ```python
 mass = 2.0

@@ -14,13 +14,7 @@ The two main loop tools in Python are `for` loops and `while` loops.
 ## Create a New Python File
 
 1. Create a new file named `loops.py`.
-2. Run the file.
-
-At first, nothing will happen because the file is empty.
-
-## A First `for` Loop
-
-Add this code to `loops.py`:
+2. Add this code to `loops.py`:
 
 ```python
 temperatures = [290.0, 292.5, 295.0, 291.5]
